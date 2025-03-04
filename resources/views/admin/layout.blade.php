@@ -6,44 +6,44 @@
 
         <title>@yield('title') | Total Parco</title>
 
-        <meta name="description" content="Total Parco Managment System" />
-        <meta name="keywords" content="Total Parco Managment System">
-        <link rel="canonical" href="{{ env('http://localhost') }}">
+        <meta name="description" content="MecTool" />
+        <meta name="keywords" content="MecTool">
+        <link rel="canonical" href="http://localhost:8000">
 
-        <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicons/favicon.png') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('assets/admin/img/favicons/favicon.png') }}" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com/">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;ampdisplay=swap">
-        <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/fontawesome.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/tabler-icons.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/flag-icons.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/vendor/css/rtl/core.css') }}" class="template-customizer-core-css" />
-        <link rel="stylesheet" href="{{ asset('assets/vendor/css/rtl/theme-default.css') }}" class="template-customizer-theme-css" />
-        <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/vendor/libs/node-waves/node-waves.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/vendor/libs/typeahead-js/typeahead.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/vendor/libs/apex-charts/apex-charts.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/vendor/libs/swiper/swiper.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/vendor/css/pages/cards-advance.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/vendor/libs/toastr/toastr.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/vendor/libs/sweetalert2/sweetalert2.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/vendor/libs/spinkit/spinkit.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/vendor/libs/bootstrap-select/bootstrap-select.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/fonts/fontawesome.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/fonts/tabler-icons.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/fonts/flag-icons.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/css/rtl/core.css') }}" class="template-customizer-core-css" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/css/rtl/theme-default.css') }}" class="template-customizer-theme-css" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/css/demo.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/node-waves/node-waves.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/typeahead-js/typeahead.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/apex-charts/apex-charts.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/swiper/swiper.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/datatables-bs5/datatables.bootstrap5.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/css/pages/cards-advance.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/toastr/toastr.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/sweetalert2/sweetalert2.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/spinkit/spinkit.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/bootstrap-select/bootstrap-select.css') }}" />
 
-        <script src="{{ asset('assets/vendor/js/helpers.js') }}"></script>
-        {{-- <script src="{{ asset('assets/vendor/js/template-customizer.js') }}"></script> --}}
-        <script src="{{ asset('assets/js/config.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/js/helpers.js') }}"></script>
+        {{-- <script src="{{ asset('assets/admin/vendor/js/template-customizer.js') }}"></script> --}}
+        <script src="{{ asset('assets/admin/js/config.js') }}"></script>
 
         @if (Session::has('themeMode') && Session::get('themeMode') === 'dark')
-            <link rel="stylesheet" href="{{ asset('assets/vendor/css/rtl/core-dark.css') }}" class="template-customizer-theme-css" />
-            <link rel="stylesheet" href="{{ asset('assets/vendor/css/rtl/theme-semi-dark-dark.css') }}" class="template-customizer-theme-css" />
+            <link rel="stylesheet" href="{{ asset('assets/admin/vendor/css/rtl/core-dark.css') }}" class="template-customizer-theme-css" />
+            <link rel="stylesheet" href="{{ asset('assets/admin/vendor/css/rtl/theme-semi-dark-dark.css') }}" class="template-customizer-theme-css" />
         @endif
 
     </head>
@@ -66,8 +66,8 @@
                 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                     <div class="app-brand demo ">
                         <a href="javascript:void(0)" class="app-brand-link">
-                            <img src="{{ asset('assets/img/logos/logo.png') }}" alt="Logo" width="30" >
-                            <span class="app-brand-text demo menu-text fw-bold">Total Parco</span>
+                            <img src="{{ asset('assets/admin/img/logos/logo.png') }}" alt="Logo" width="30" >
+                            <span class="app-brand-text demo menu-text fw-bold">MecTools</span>
                         </a>
 
                         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -77,43 +77,12 @@
                     </div>
                     <div class="menu-inner-shadow"></div>
                     <ul class="menu-inner py-1">
-                        <li class="menu-item {{ request()->is('dashboard') === true ? 'active' : '' }} waves-effect waves-light">
-                            <a href="{{ route('dashboard') }}" class="menu-link">
+                        <li class="menu-item {{ request()->is('admin/dashboard') === true ? 'active' : '' }} waves-effect waves-light">
+                            <a href="{{ route('admin.dashboard') }}" class="menu-link">
                                 <i class="menu-icon tf-icons ti ti-smart-home"></i>
                                 <div>Dashboard</div>
                             </a>
                         </li>
-                        <li class="menu-item {{ request()->is('product/*') === true ? 'active' : '' }} waves-effect waves-light">
-                            <a href="{{ route('product.list') }}" class="menu-link">
-                                <i class="menu-icon tf-icons ti ti-server"></i>
-                                <div>Products</div>
-                            </a>
-                        </li>
-                        <li class="menu-item {{ request()->is('fuel-rate/*') === true ? 'active' : '' }} waves-effect waves-light">
-                            <a href="{{ route('fuel-rate.list') }}?startDate={{ date('d/m/Y') }}&endDate={{ date('d/m/Y', strtotime('+1 month')) }}" class="menu-link">
-                                <i class="menu-icon tf-icons ti ti-file-dollar"></i>
-                                <div>Fuel Rates</div>
-                            </a>
-                        </li>
-                        <li class="menu-item {{ request()->is('tax/*') === true ? 'active' : '' }} waves-effect waves-light">
-                            <a href="{{ route('tax.list') }}" class="menu-link">
-                                <i class="menu-icon tf-icons ti ti-color-swatch"></i>
-                                <div>Taxes</div>
-                            </a>
-                        </li>
-                        <li class="menu-item {{ request()->is('company/*') === true ? 'active' : '' }} waves-effect waves-light">
-                            <a href="{{ route('company.list') }}" class="menu-link">
-                                <i class="menu-icon tf-icons ti ti-components"></i>
-                                <div>Companies</div>
-                            </a>
-                        </li>
-                        <li class="menu-item {{ request()->is('dip-record/*') === true ? 'active' : '' }} waves-effect waves-light">
-                            <a href="{{ route('dip-record.list') }}" class="menu-link">
-                                <i class="menu-icon tf-icons ti ti-layout-kanban"></i>
-                                <div>Dip Records</div>
-                            </a>
-                        </li>
-
                         {{-- <li class="menu-item active open">
                             <a href="javascript:void(0);" class="menu-link menu-toggle">
                                 <i class="menu-icon tf-icons ti ti-smart-home"></i>
@@ -170,12 +139,12 @@
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end dropdown-styles">
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('switch.theme', 'light') }}">
+                                            <a class="dropdown-item" href="{{ route('admin.switch.theme', 'light') }}">
                                                 <span class="align-middle"><i class="ti ti-sun me-2"></i>Light</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('switch.theme', 'dark') }}">
+                                            <a class="dropdown-item" href="{{ route('admin.switch.theme', 'dark') }}">
                                                 <span class="align-middle"><i class="ti ti-moon me-2"></i>Dark</span>
                                             </a>
                                         </li>
@@ -184,20 +153,21 @@
                                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                                     <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                         <div class="avatar avatar-online">
-                                            <img src="{{ asset('assets/img/avatars/1.png') }}" alt="" class="h-auto rounded-circle">
+                                            <img src="{{ asset('assets/admin/img/avatars/1.png') }}" alt="" class="h-auto rounded-circle">
                                         </div>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end">
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('profile') }}">
+                                            <a class="dropdown-item" href="{{ route('admin.profile') }}">
                                                 <div class="d-flex">
                                                     <div class="flex-shrink-0 me-3">
                                                         <div class="avatar avatar-online">
-                                                            <img src="{{ asset('assets/img/avatars/1.png') }}" alt="" class="h-auto rounded-circle">
+                                                            <img src="{{ asset('assets/admin/img/avatars/1.png') }}" alt="" class="h-auto rounded-circle">
                                                         </div>
                                                     </div>
                                                     <div class="flex-grow-1">
-                                                        <span class="fw-medium d-block">{{ Auth::user()->name }}</span>
+                                                        {{-- <span class="fw-medium d-block">{{ Auth::user()->name }}</span> --}}
+                                                        <span class="fw-medium d-block">Administrator</span>
                                                         <small class="text-muted">Admin</small>
                                                     </div>
                                                 </div>
@@ -207,7 +177,7 @@
                                             <div class="dropdown-divider"></div>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('profile') }}">
+                                            <a class="dropdown-item" href="{{ route('admin.profile') }}">
                                                 <i class="ti ti-user-check me-2 ti-sm"></i>
                                                 <span class="align-middle">Profile</span>
                                             </a>
@@ -215,7 +185,7 @@
                                             <div class="dropdown-divider"></div>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('logout') }}">
+                                            <a class="dropdown-item" href="{{ route('admin.logout') }}">
                                                 <i class="ti ti-logout me-2 ti-sm"></i>
                                                 <span class="align-middle">Log Out</span>
                                             </a>
@@ -259,24 +229,24 @@
         <input type="hidden" id="warning" value="{{ Session::get('warning') }}">
         <input type="hidden" id="error" value="{{ Session::get('error') }}">
 
-        <script src="{{ asset('assets/vendor/libs/jquery/jquery.js') }}"></script>
-        <script src="{{ asset('assets/vendor/libs/popper/popper.js') }}"></script>
-        <script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
-        <script src="{{ asset('assets/vendor/libs/node-waves/node-waves.js') }}"></script>
-        <script src="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
-        <script src="{{ asset('assets/vendor/libs/hammer/hammer.js') }}"></script>
-        <script src="{{ asset('assets/vendor/libs/i18n/i18n.js') }}"></script>
-        <script src="{{ asset('assets/vendor/libs/typeahead-js/typeahead.js') }}"></script>
-        <script src="{{ asset('assets/vendor/js/menu.js') }}"></script>
-        <script src="{{ asset('assets/vendor/libs/apex-charts/apexcharts.js') }}"></script>
-        <script src="{{ asset('assets/vendor/libs/swiper/swiper.js') }}"></script>
-        <script src="{{ asset('assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js') }}"></script>
-        <script src="{{ asset('assets/js/main.js') }}"></script>
-        <script src="{{ asset('assets/vendor/libs/toastr/toastr.js') }}"></script>
-        <script src="{{ asset('assets/vendor/libs/sweetalert2/sweetalert2.js') }}"></script>
-        <script src="{{ asset('assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js') }}"></script>
-        <script src="{{ asset('assets/vendor/libs/bootstrap-select/bootstrap-select.js') }}"></script>
-        <script src="{{ asset('assets/js/script.js') }}"></script>
-        <script src="{{ asset('assets/js/dashboards-analytics.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/jquery/jquery.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/popper/popper.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/js/bootstrap.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/node-waves/node-waves.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/hammer/hammer.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/i18n/i18n.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/typeahead-js/typeahead.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/js/menu.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/apex-charts/apexcharts.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/swiper/swiper.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/datatables-bs5/datatables-bootstrap5.js') }}"></script>
+        <script src="{{ asset('assets/admin/js/main.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/toastr/toastr.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/sweetalert2/sweetalert2.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/bootstrap-select/bootstrap-select.js') }}"></script>
+        <script src="{{ asset('assets/admin/js/script.js') }}"></script>
+        <script src="{{ asset('assets/admin/js/dashboards-analytics.js') }}"></script>
     </body>
 </html>

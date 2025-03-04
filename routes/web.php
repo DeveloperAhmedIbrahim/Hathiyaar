@@ -1,9 +1,13 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
+// Admin Controllers
+use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
+
+// Client Controllers
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 
 Route::redirect('/', 'home');
 
@@ -34,3 +38,11 @@ Route::get('cart', [HomeController::class, "cart"])->name('cart');
 Route::get('standard-lorem', [HomeController::class, "standardLorem"])->name('standardLorem');
 Route::get('variations', [HomeController::class, "variations"])->name('variations');
 Route::get('get-some', [HomeController::class, "getSome"])->name('getSome');
+
+Route::prefix('admin')->name('admin.')->group(function(){
+    Route::redirect('/', 'admin/dashboard');
+    Route::get('logout', [AdminDashboard::class, "logout"])->name('logout');
+    Route::get('profile', [AdminDashboard::class, "profile"])->name('profile');
+    Route::get('dashboard', [AdminDashboard::class, "dashboard"])->name('dashboard');
+    Route::get("switch-theme/{mode?}", [AdminDashboard::class, "switchTheme"])->name('switch.theme');
+});

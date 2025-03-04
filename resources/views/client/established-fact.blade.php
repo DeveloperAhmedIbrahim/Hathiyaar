@@ -376,7 +376,7 @@
 
                     <div class="" id="add-comment">
 
-                        <h4 class="no-login text-center">You must <a href="{{ route('login') }}">login</a> to add a comment. If you do not have an account, you may <a href="{{ route('register') }}">register</a> for one. Registration is free!</h4>
+                        <h4 class="no-login text-center">You must <a href="{{ route('auth.login') }}">login</a> to add a comment. If you do not have an account, you may <a href="{{ route('auth.register') }}">register</a> for one. Registration is free!</h4>
 
                     </div>
                 </div>

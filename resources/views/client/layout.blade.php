@@ -67,8 +67,8 @@
                             <span class="">Login</span><i class="fa-regular fa-circle-user"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right account-link-toggle">
-                            <li><a href="{{ route('register') }}" class="dropdown-item">Register</a></li>
-                            <li><a href="{{ route('login') }}" class="dropdown-item">Login</a></li>
+                            <li><a href="{{ route('auth.register') }}" class="dropdown-item">Register</a></li>
+                            <li><a href="{{ route('auth.login') }}" class="dropdown-item">Login</a></li>
                         </ul>
                     </div>
 
@@ -689,8 +689,8 @@
                                                                             <li><a href="{{ route('contact') }}" class="main-menu">Contact Us</a></li>
                                                                             <li><a href="{{ route('siteMap') }}" class="main-menu">Site Map</a></li>
                                                                             <li><a href="{{ route('category') }}" class="main-menu">Special</a></li>
-                                                                            <li><a href="{{ route('login') }}" class="main-menu">My Account</a></li>
-                                                                            <li><a href="{{ route('login') }}" class="main-menu">Order History</a></li>
+                                                                            <li><a href="{{ route('auth.login') }}" class="main-menu">My Account</a></li>
+                                                                            <li><a href="{{ route('auth.login') }}" class="main-menu">Order History</a></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
@@ -863,7 +863,7 @@
                     <ul class="list-unstyled text-set to-show extras">
                         <li class=""><a href="{{ route('brand') }}">Brands</a></li>
                         <li class=""><a href="{{ route('giftCirtificate') }}">Gift Certificates</a></li>
-                        <li class=""><a href="{{ route('login') }}">Affiliate</a></li>
+                        <li class=""><a href="{{ route('auth.login') }}">Affiliate</a></li>
                         <li class=""><a href="{{ route('category') }}">Specials</a></li>
                         <li class=""><a href="{{ route('siteMap') }}">Site Map</a></li>
                     </ul>

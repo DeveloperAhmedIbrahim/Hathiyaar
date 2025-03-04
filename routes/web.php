@@ -4,16 +4,14 @@ use Illuminate\Support\Facades\Route;
 
 // Admin Controllers
 use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
+use App\Http\Controllers\Admin\AuthController as AdminAuthentication;
 
 // Client Controllers
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 
+// Public Routes
 Route::redirect('/', 'home');
-
-Route::get('login', [AuthController::class, "login"])->name('login');
-Route::get('register', [AuthController::class, "register"])->name('register');
-Route::get('forgot', [AuthController::class, "forgot"])->name('forgot');
 
 Route::get('home', [HomeController::class, "home"])->name('home');
 Route::get('about', [HomeController::class, "about"])->name('about');
@@ -39,10 +37,21 @@ Route::get('standard-lorem', [HomeController::class, "standardLorem"])->name('st
 Route::get('variations', [HomeController::class, "variations"])->name('variations');
 Route::get('get-some', [HomeController::class, "getSome"])->name('getSome');
 
+// Admin Routes
 Route::prefix('admin')->name('admin.')->group(function(){
     Route::redirect('/', 'admin/dashboard');
     Route::get('logout', [AdminDashboard::class, "logout"])->name('logout');
     Route::get('profile', [AdminDashboard::class, "profile"])->name('profile');
     Route::get('dashboard', [AdminDashboard::class, "dashboard"])->name('dashboard');
     Route::get("switch-theme/{mode?}", [AdminDashboard::class, "switchTheme"])->name('switch.theme');
+});
+
+// Auth Routes
+Route::prefix('auth')->name('auth.')->group(function(){
+    Route::get('login', [AuthController::class, "login"])->name('login');
+    Route::get('register', [AuthController::class, "register"])->name('register');
+    Route::get('forgot', [AuthController::class, "forgot"])->name('forgot');
+
+    Route::get('admin/login', [AdminAuthentication::class, "login"])->name('admin.login');
+    Route::get('admin/logout', [AdminAuthentication::class, "logout"])->name('admin.logout');
 });

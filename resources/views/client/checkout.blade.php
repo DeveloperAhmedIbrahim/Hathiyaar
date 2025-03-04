@@ -29,7 +29,7 @@
 
                         <div id="checkout-register">
                             <form id="form-register">
-                                <p>If you already have an account with us, please login at the <a href="{{ route('login') }}"><strong>login page</strong></a>.</p>
+                                <p>If you already have an account with us, please login at the <a href="{{ route('auth.login') }}"><strong>login page</strong></a>.</p>
                                 <fieldset>
                                     <legend>Your Personal Details</legend>
                                     <div class="row">
@@ -563,19 +563,19 @@
                     <div class="box-content">
                         <h3 class="toggled relative">Account<span class="toggle-open toggle-open-1 arrow-down"></span></h3>
                         <ul id="account-info" class="list-unstyled list-group to-show">
-                            <li><a href="{{ route('login') }}" class="list-group-item">Login</a></li>
-                            <li><a href="{{ route('register') }}" class="list-group-item">Register</a></li>
-                            <li><a href="{{ route('forgot') }}" class="list-group-item">Forgotten Password</a></li>
-                            <li><a href="{{ route('login') }}" class="list-group-item">My Account</a></li>
-                            <li><a href="{{ route('login') }}" class="list-group-item">Address Book</a></li>
-                            <li><a href="{{ route('login') }}" class="list-group-item">Wish List</a></li>
-                            <li><a href="{{ route('login') }}" class="list-group-item">Order History</a></li>
-                            <li><a href="{{ route('login') }}" class="list-group-item">Downloads</a></li>
-                            <li><a href="{{ route('login') }}" class="list-group-item">Subscriptions</a></li>
-                            <li><a href="{{ route('login') }}" class="list-group-item">Reward Points</a></li>
-                            <li><a href="{{ route('login') }}" class="list-group-item">Returns</a></li>
-                            <li><a href="{{ route('login') }}" class="list-group-item">Transactions</a></li>
-                            <li><a href="{{ route('login') }}" class="list-group-item">Newsletter</a></li>
+                            <li><a href="{{ route('auth.login') }}" class="list-group-item">Login</a></li>
+                            <li><a href="{{ route('auth.register') }}" class="list-group-item">Register</a></li>
+                            <li><a href="{{ route('auth.forgot') }}" class="list-group-item">Forgotten Password</a></li>
+                            <li><a href="{{ route('auth.login') }}" class="list-group-item">My Account</a></li>
+                            <li><a href="{{ route('auth.login') }}" class="list-group-item">Address Book</a></li>
+                            <li><a href="{{ route('auth.login') }}" class="list-group-item">Wish List</a></li>
+                            <li><a href="{{ route('auth.login') }}" class="list-group-item">Order History</a></li>
+                            <li><a href="{{ route('auth.login') }}" class="list-group-item">Downloads</a></li>
+                            <li><a href="{{ route('auth.login') }}" class="list-group-item">Subscriptions</a></li>
+                            <li><a href="{{ route('auth.login') }}" class="list-group-item">Reward Points</a></li>
+                            <li><a href="{{ route('auth.login') }}" class="list-group-item">Returns</a></li>
+                            <li><a href="{{ route('auth.login') }}" class="list-group-item">Transactions</a></li>
+                            <li><a href="{{ route('auth.login') }}" class="list-group-item">Newsletter</a></li>
                         </ul>
                     </div>
                 </div>

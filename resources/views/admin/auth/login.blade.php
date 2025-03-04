@@ -1,4 +1,4 @@
-@extends('auth.layout')
+@extends('admin.auth.layout')
 
 @section('title', 'Login')
 
@@ -14,13 +14,13 @@
                         <div class="card-body">
                             <!-- Logo -->
                             <div class="flex-column app-brand justify-content-center mb-4 mt-2 gap-2">
-                                <img src="{{ asset('assets/img/logos/logo.png') }}" alt="Logo" width="80">
+                                <img src="{{ asset('assets/admin/img/logos/logo.png') }}" alt="Logo" width="80">
                                 <h4 class="mb-1 pt-2">MecTools</h4>
                             </div>
                             <!-- /Logo -->
 
                             <p class="mb-3">
-                                You have to sign-in in order to access <b>Total Parco Management System</b>.
+                                You have to sign-in in order to access <b>MecTools</b>.
                             </p>
 
                             <form onsubmit="submission(event, '{{ route('auth.admin.login') }}')" class="mb-3" >

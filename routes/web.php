@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AuthController as AdminAuthentication;
 // Client Controllers
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Middleware\AuthenticationCheck;
 
 // Public Routes
 Route::redirect('/', 'home');
@@ -38,7 +39,7 @@ Route::get('variations', [HomeController::class, "variations"])->name('variation
 Route::get('get-some', [HomeController::class, "getSome"])->name('getSome');
 
 // Admin Routes
-Route::prefix('admin')->name('admin.')->group(function(){
+Route::prefix('admin')->name('admin.')->middleware(AuthenticationCheck::class)->group(function(){
     Route::redirect('/', 'admin/dashboard');
     Route::get('logout', [AdminDashboard::class, "logout"])->name('logout');
     Route::get('profile', [AdminDashboard::class, "profile"])->name('profile');

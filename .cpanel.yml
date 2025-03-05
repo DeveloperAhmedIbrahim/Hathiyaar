@@ -1,5 +1,5 @@
 ---
 deployment:
     task:
-    - export DEPLOYPATH=/home2/techrev2/mectools.techrevivals.net
+    - export DEPLOYPATH=/home2/techrev2/hathiyaar.techrevivals.net
     - /bin/cp * $DEPLOYPATH

@@ -67,7 +67,7 @@
                     <div class="app-brand demo ">
                         <a href="javascript:void(0)" class="app-brand-link">
                             <img src="{{ asset('assets/admin/img/logos/logo.png') }}" alt="Logo" width="30" >
-                            <span class="app-brand-text demo menu-text fw-bold">MecTools</span>
+                            <span class="app-brand-text demo menu-text fw-bold">Hathiyaar</span>
                         </a>
 
                         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">

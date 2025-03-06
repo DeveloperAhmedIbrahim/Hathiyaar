@@ -43,7 +43,7 @@ class AuthController extends Controller
             if(Hash::check($request->password, $user->password))
             {
                 $remember = $request->remember ? true : false;
-                Auth::guard('admin')->login($user, $remember);
+                Auth::login($user, $remember);
                 Session::flash('success', "Welcome! {$user->name}, enjoy the journey.");
                 return response()->json([
                     'status' => true,
@@ -69,7 +69,7 @@ class AuthController extends Controller
 
     public function logout()
     {
-        Auth::guard('admin')->logout();
+        Auth::logout();
         return redirect()->route('auth.admin.login')->with('success', 'You session closed successfully.');
     }
 }

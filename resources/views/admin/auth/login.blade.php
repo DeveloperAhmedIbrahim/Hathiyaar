@@ -14,8 +14,8 @@
                         <div class="card-body">
                             <!-- Logo -->
                             <div class="flex-column app-brand justify-content-center mb-4 mt-2 gap-2">
-                                <img src="{{ asset('assets/admin/img/logos/logo.png') }}" alt="Logo" width="80">
-                                <h4 class="mb-1 pt-2">Hathiyaar</h4>
+                                <img src="{{ asset('assets/admin/img/logos/logo.png') }}" alt="Logo" width="200">
+                                <h4 class="mb-1 pt-2"><b>Admin Access</b></h4>
                             </div>
                             <!-- /Logo -->
 

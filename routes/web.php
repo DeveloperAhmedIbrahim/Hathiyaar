@@ -49,10 +49,10 @@ Route::prefix('admin')->name('admin.')->middleware(AuthenticationCheck::class)->
 
 // Auth Routes
 Route::prefix('auth')->name('auth.')->group(function(){
-    Route::get('login', [AuthController::class, "login"])->name('login');
-    Route::get('register', [AuthController::class, "register"])->name('register');
+    Route::match(['GET', 'POST'], 'login', [AuthController::class, "login"])->name('login');
+    Route::match(['GET', 'POST'], 'register', [AuthController::class, "register"])->name('register');
     Route::get('forgot', [AuthController::class, "forgot"])->name('forgot');
 
-    Route::get('admin/login', [AdminAuthentication::class, "login"])->name('admin.login');
+    Route::match(['GET', 'POST'], 'admin/login', [AdminAuthentication::class, "login"])->name('admin.login');
     Route::get('admin/logout', [AdminAuthentication::class, "logout"])->name('admin.logout');
 });

@@ -4,10 +4,10 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-        <title>@yield('title') | Total Parco</title>
+        <title>@yield('title') | Hathiyaar</title>
 
-        <meta name="description" content="MecTool" />
-        <meta name="keywords" content="MecTool">
+        <meta name="description" content="Hathiyaar" />
+        <meta name="keywords" content="Hathiyaar">
         <link rel="canonical" href="http://localhost:8000">
 
         <link rel="icon" type="image/x-icon" href="{{ asset('assets/admin/img/favicons/favicon.png') }}" />
@@ -66,8 +66,7 @@
                 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                     <div class="app-brand demo ">
                         <a href="javascript:void(0)" class="app-brand-link">
-                            <img src="{{ asset('assets/admin/img/logos/logo.png') }}" alt="Logo" width="30" >
-                            <span class="app-brand-text demo menu-text fw-bold">Hathiyaar</span>
+                            <img src="{{ asset('assets/admin/img/logos/logo.png') }}" alt="Logo" width="180" >
                         </a>
 
                         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">

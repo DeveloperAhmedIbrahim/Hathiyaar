@@ -1,7 +1,7 @@
 "use strict";
 (window.config = {
     colors: {
-        primary: "#7367f0",
+        primary: "#FCE927",
         secondary: "#a8aaae",
         success: "#28c76f",
         info: "#00cfe8",
@@ -18,7 +18,7 @@
         borderColor: "#dbdade",
     },
     colors_label: {
-        primary: "#7367f029",
+        primary: "#FCE92729",
         secondary: "#a8aaae29",
         success: "#28c76f29",
         info: "#00cfe829",

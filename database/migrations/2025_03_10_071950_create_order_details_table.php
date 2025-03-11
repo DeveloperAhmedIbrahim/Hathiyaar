@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('order_id')->constrained('orders', 'id');
             $table->string('product_name');
             $table->string('product_image');
-            $table->string('product_quantity');
-            $table->string('product_price');
+            $table->integer('product_quantity');
+            $table->double('product_price');
             $table->timestamps();
         });
     }

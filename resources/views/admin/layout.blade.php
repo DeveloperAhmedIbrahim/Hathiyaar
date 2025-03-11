@@ -82,6 +82,12 @@
                                 <div>Dashboard</div>
                             </a>
                         </li>
+                        <li class="menu-item {{ request()->is('admin/category') === true ? 'active' : '' }} waves-effect waves-light">
+                            <a href="{{ route('admin.category.list') }}" class="menu-link">
+                                <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                                <div>Categories</div>
+                            </a>
+                        </li>
                         {{-- <li class="menu-item active open">
                             <a href="javascript:void(0);" class="menu-link menu-toggle">
                                 <i class="menu-icon tf-icons ti ti-smart-home"></i>

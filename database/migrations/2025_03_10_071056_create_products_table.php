@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('brand_id')->constrained('brands', 'id');
             $table->string('images');
             $table->string('sku');
-            $table->string('description');
+            $table->longText('description');
             $table->timestamps();
         });
     }

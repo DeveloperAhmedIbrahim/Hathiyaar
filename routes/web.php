@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 // Admin Controllers
-use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
-use App\Http\Controllers\Admin\AuthController as AdminAuthentication;
-
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardCtrl;
+use App\Http\Controllers\Admin\AuthController as AdminAuthCtrl;
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryCtrl;
 // Client Controllers
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
@@ -41,10 +41,16 @@ Route::get('get-some', [HomeController::class, "getSome"])->name('getSome');
 // Admin Routes
 Route::prefix('admin')->name('admin.')->middleware(AuthenticationCheck::class)->group(function(){
     Route::redirect('/', 'admin/dashboard');
-    Route::get('logout', [AdminDashboard::class, "logout"])->name('logout');
-    Route::get('profile', [AdminDashboard::class, "profile"])->name('profile');
-    Route::get('dashboard', [AdminDashboard::class, "dashboard"])->name('dashboard');
-    Route::get("switch-theme/{mode?}", [AdminDashboard::class, "switchTheme"])->name('switch.theme');
+    Route::get('logout', [AdminDashboardCtrl::class, "logout"])->name('logout');
+    Route::get('profile', [AdminDashboardCtrl::class, "profile"])->name('profile');
+    Route::get('dashboard', [AdminDashboardCtrl::class, "dashboard"])->name('dashboard');
+    Route::get("switch-theme/{mode?}", [AdminDashboardCtrl::class, "switchTheme"])->name('switch.theme');
+    Route::prefix('category')->name('category.')->group(function() {
+        Route::get('list', [AdminCategoryCtrl::class, "list"])->name('list');
+        Route::match(['GET', 'POST'], 'insert', [AdminCategoryCtrl::class, "insert"])->name('insert');
+        Route::match(['GET', 'POST'], 'update/{id?}', [AdminCategoryCtrl::class, "update"])->name('update');
+        Route::post('delete/{id}', [AdminCategoryCtrl::class, "delete"])->name('delete');
+    });
 });
 
 // Auth Routes
@@ -53,6 +59,6 @@ Route::prefix('auth')->name('auth.')->group(function(){
     Route::match(['GET', 'POST'], 'register', [AuthController::class, "register"])->name('register');
     Route::get('forgot', [AuthController::class, "forgot"])->name('forgot');
 
-    Route::match(['GET', 'POST'], 'admin/login', [AdminAuthentication::class, "login"])->name('admin.login');
-    Route::get('admin/logout', [AdminAuthentication::class, "logout"])->name('admin.logout');
+    Route::match(['GET', 'POST'], 'admin/login', [AdminAuthCtrl::class, "login"])->name('admin.login');
+    Route::get('admin/logout', [AdminAuthCtrl::class, "logout"])->name('admin.logout');
 });

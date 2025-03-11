@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enum\Role;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -18,7 +19,7 @@ class AdminSeeder extends Seeder
         $user->name = "Administrator";
         $user->email = "admin@domain.com";
         $user->password = Hash::make("admin");
-        $user->role = 1;
+        $user->role = Role::from(1);
         $user->profile = '';
         $user->save();
     }

@@ -19,13 +19,13 @@ class AuthenticationCheck
         // Check if user is visiting an admin route:
         if ($request->is('admin/*')) {
             // Must be authenticated and have role=1
-            if (!Auth::check() || Auth::user()->role !== 1) {
+            if (!Auth::check() || Auth::user()->role->name !== "Admin") {
                 return redirect()->route('auth.admin.login')->with('info', 'Your session expired please login again to access dashboard.');;
             }
         } else {
             // Otherwise, treat it as a client route
             // Must be authenticated and have role=2
-            if (!Auth::check() || Auth::user()->role !== 2) {
+            if (!Auth::check() || Auth::user()->role->name !== "Client") {
                 return redirect()->route('auth.login')->with('info', 'Your session expired please login again to access that page.');;
             }
         }

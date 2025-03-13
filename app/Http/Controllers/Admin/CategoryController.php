@@ -81,7 +81,7 @@ class CategoryController extends Controller
             }
             else
             {
-                return view('admin.categories.update');
+                return view('admin.categories.update', compact('category'));
             }
         }
         else

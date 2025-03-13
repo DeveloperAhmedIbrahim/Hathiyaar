@@ -29,10 +29,10 @@
                             <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown" aria-expanded="false"><i class="ti ti-dots-vertical"></i></button>
                                 <div class="dropdown-menu" style="">
-                                    <a class="dropdown-item" href="{{ route('category.update', $category->id) }}">
+                                    <a class="dropdown-item" href="{{ route('admin.category.update', $category->id) }}">
                                         <i class="ti ti-pencil me-1"></i> Edit
                                     </a>
-                                    <a class="dropdown-item" href="javascript:void(0);" onclick="deletetion('category', '{{ route('category.delete', $category->id) }}', 'category-{{ $product->id }}')">
+                                    <a class="dropdown-item" href="javascript:void(0);" onclick="deletetion('category', '{{ route('admin.category.delete', $category->id) }}', 'category-{{ $category->id }}')">
                                         <i class="ti ti-trash me-1"></i> Delete
                                     </a>
                                 </div>

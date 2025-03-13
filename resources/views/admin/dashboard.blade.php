@@ -47,7 +47,7 @@
                   </div>
                 </div>
                 <div class="col-lg-5 col-md-3 col-12 order-1 order-md-2 my-4 my-md-0 text-center">
-                  <img src="../../assets/img/illustrations/card-website-analytics-1.png" alt="Website Analytics" width="170" class="card-website-analytics-img">
+                  <img src="{{ asset('assets/admin/img/illustrations/card-website-analytics-1.png') }}" alt="Website Analytics" width="170" class="card-website-analytics-img">
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@
                 </div>
               </div>
               <div class="col-lg-5 col-md-3 col-12 order-1 order-md-2 my-4 my-md-0 text-center">
-                <img src="../../assets/img/illustrations/card-website-analytics-2.png" alt="Website Analytics" width="170" class="card-website-analytics-img">
+                <img src="{{ asset("assets/admin/img/illustrations/card-website-analytics-2.png") }}" alt="Website Analytics" width="170" class="card-website-analytics-img">
               </div>
             </div>
           </div><div class="swiper-slide swiper-slide-active" role="group" aria-label="3 / 3" data-swiper-slide-index="2" style="width: 509px;">
@@ -126,7 +126,7 @@
                 </div>
               </div>
               <div class="col-lg-5 col-md-3 col-12 order-1 order-md-2 my-4 my-md-0 text-center">
-                <img src="../../assets/img/illustrations/card-website-analytics-3.png" alt="Website Analytics" width="170" class="card-website-analytics-img">
+                <img src="{{ asset("assets/admin/img/illustrations/card-website-analytics-3.png") }}" alt="Website Analytics" width="170" class="card-website-analytics-img">
               </div>
             </div>
           </div></div>

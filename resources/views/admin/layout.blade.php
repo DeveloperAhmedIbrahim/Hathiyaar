@@ -82,7 +82,7 @@
                                 <div>Dashboard</div>
                             </a>
                         </li>
-                        <li class="menu-item {{ request()->is('admin/category') === true ? 'active' : '' }} waves-effect waves-light">
+                        <li class="menu-item {{ request()->is('admin/category/*') === true ? 'active' : '' }} waves-effect waves-light">
                             <a href="{{ route('admin.category.list') }}" class="menu-link">
                                 <i class="menu-icon tf-icons ti ti-smart-home"></i>
                                 <div>Categories</div>
@@ -171,9 +171,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="flex-grow-1">
-                                                        {{-- <span class="fw-medium d-block">{{ Auth::user()->name }}</span> --}}
-                                                        <span class="fw-medium d-block">Administrator</span>
-                                                        <small class="text-muted">Admin</small>
+                                                        <span class="fw-medium d-block">{{ Auth::user()->name }}</span>
+                                                        <small class="text-muted">{{ Auth::user()->role->name }}</small>
                                                     </div>
                                                 </div>
                                             </a>

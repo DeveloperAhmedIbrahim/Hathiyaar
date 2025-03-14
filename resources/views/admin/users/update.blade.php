@@ -10,7 +10,7 @@
 
 <div class="card">
     <h5 class="card-header d-flex justify-content-start">
-        <a href="{{ route('admin.user.list', request('role')) }}" class="btn btn-info waves-effect waves-light btn-sm"><i class="fa-solid fa-backward"></i>&nbsp;<span>Return Categories</span></a>
+        <a href="{{ route('admin.user.list', request('role')) }}" class="btn btn-info waves-effect waves-light btn-sm"><i class="fa-solid fa-backward"></i>&nbsp;<span>Return Users</span></a>
     </h5>
     <div class="card-body row">
         <form onsubmit="submission(event, '{{ route('admin.user.update', request('role')) }}')">

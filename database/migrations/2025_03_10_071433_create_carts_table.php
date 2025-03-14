@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users', 'id');
-            $table->foreignId('product_id')->constrained('products', 'id');
+            $table->foreignId('item_id')->constrained('items', 'id');
             $table->integer('quantity');
             $table->double('price');
             $table->timestamps();

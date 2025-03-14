@@ -36,6 +36,9 @@
         <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/spinkit/spinkit.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/bootstrap-select/bootstrap-select.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/quill/typography.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/quill/katex.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/quill/editor.css') }}" />
 
         <script src="{{ asset('assets/admin/vendor/js/helpers.js') }}"></script>
         {{-- <script src="{{ asset('assets/admin/vendor/js/template-customizer.js') }}"></script> --}}
@@ -258,6 +261,8 @@
         <script src="{{ asset('assets/admin/vendor/libs/sweetalert2/sweetalert2.js') }}"></script>
         <script src="{{ asset('assets/admin/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js') }}"></script>
         <script src="{{ asset('assets/admin/vendor/libs/bootstrap-select/bootstrap-select.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/quill/katex.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/quill/quill.js') }}"></script>
         <script src="{{ asset('assets/admin/js/script.js') }}"></script>
         <script src="{{ asset('assets/admin/js/dashboards-analytics.js') }}"></script>
     </body>

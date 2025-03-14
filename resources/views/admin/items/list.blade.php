@@ -28,8 +28,11 @@
             @if (count($items) > 0)
                 @foreach ($items as $item)
                     <tr id="item-{{ $item->id }}">
-                        <td>{{ $item->name }}</td>
-                        <td>{{ $item->images }}</td>
+                        <td>{{ $item->sku }}</td>
+                        <td>{{ Str::limit($item->name, 20, '...') }}</td>
+                        <td><img src="{{ asset("uploads/items/{$item->images[0]->name}") }}" alt="" width="80"  /></td>
+                        <td>{{ $item->brand->name }}</td>
+                        <td>{{ $item->category->name }}</td>
                         <td>
                             <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown" aria-expanded="false"><i class="ti ti-dots-vertical"></i></button>
@@ -47,7 +50,7 @@
                 @endforeach
             @else
             <tr>
-                <td colspan="3" class="text-center py-5">Hey! No item found to show. Please add one to see.</td>
+                <td colspan="6" class="text-center py-5">Hey! No item found to show. Please add one to see.</td>
             </tr>
             @endif
         </tbody>

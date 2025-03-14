@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->foreignId('category_id')->constrained('categories', 'id');
             $table->foreignId('brand_id')->constrained('brands', 'id');
+            $table->foreignId('user_id')->constrained('users', 'id');
             $table->string('sku');
             $table->longText('description');
             $table->timestamps();

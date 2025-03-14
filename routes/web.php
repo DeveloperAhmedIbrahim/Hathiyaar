@@ -73,6 +73,7 @@ Route::prefix('admin')->name('admin.')->middleware(AuthenticationCheck::class)->
         Route::match(['GET', 'POST'], 'insert', [AdminItemCtrl::class, "insert"])->name('insert');
         Route::match(['GET', 'POST'], 'update/{id?}', [AdminItemCtrl::class, "update"])->name('update');
         Route::post('delete/{id}', [AdminItemCtrl::class, "delete"])->name('delete');
+        Route::post('delete/image/{id}', [AdminItemCtrl::class, "deleteImage"])->name('delete.image');
     });
     Route::prefix('product/stock')->name('stock.')->group(function() {
         Route::get('list', [AdminStockCtrl::class, "list"])->name('list');

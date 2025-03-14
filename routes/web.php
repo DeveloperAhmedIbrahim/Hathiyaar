@@ -6,7 +6,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardCtrl;
 use App\Http\Controllers\Admin\AuthController as AdminAuthCtrl;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryCtrl;
+use App\Http\Controllers\Admin\BrandController as AdminBrandCtrl;
 use App\Http\Controllers\Admin\UserController as AdminUserCtrl;
+use App\Http\Controllers\Admin\ItemController as AdminItemCtrl;
+use App\Http\Controllers\Admin\StockController as AdminStockCtrl;
 // Client Controllers
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
@@ -57,6 +60,24 @@ Route::prefix('admin')->name('admin.')->middleware(AuthenticationCheck::class)->
         Route::match(['GET', 'POST'], 'insert', [AdminCategoryCtrl::class, "insert"])->name('insert');
         Route::match(['GET', 'POST'], 'update/{id?}', [AdminCategoryCtrl::class, "update"])->name('update');
         Route::post('delete/{id}', [AdminCategoryCtrl::class, "delete"])->name('delete');
+    });
+    Route::prefix('brand')->name('brand.')->group(function() {
+        Route::get('list', [AdminBrandCtrl::class, "list"])->name('list');
+        Route::match(['GET', 'POST'], 'insert', [AdminBrandCtrl::class, "insert"])->name('insert');
+        Route::match(['GET', 'POST'], 'update/{id?}', [AdminBrandCtrl::class, "update"])->name('update');
+        Route::post('delete/{id}', [AdminBrandCtrl::class, "delete"])->name('delete');
+    });
+    Route::prefix('product/item')->name('item.')->group(function() {
+        Route::get('list', [AdminItemCtrl::class, "list"])->name('list');
+        Route::match(['GET', 'POST'], 'insert', [AdminItemCtrl::class, "insert"])->name('insert');
+        Route::match(['GET', 'POST'], 'update/{id?}', [AdminItemCtrl::class, "update"])->name('update');
+        Route::post('delete/{id}', [AdminItemCtrl::class, "delete"])->name('delete');
+    });
+    Route::prefix('product/stock')->name('stock.')->group(function() {
+        Route::get('list', [AdminStockCtrl::class, "list"])->name('list');
+        Route::match(['GET', 'POST'], 'insert', [AdminStockCtrl::class, "insert"])->name('insert');
+        Route::match(['GET', 'POST'], 'update/{id?}', [AdminStockCtrl::class, "update"])->name('update');
+        Route::post('delete/{id}', [AdminStockCtrl::class, "delete"])->name('delete');
     });
 });
 

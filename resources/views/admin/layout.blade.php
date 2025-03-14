@@ -82,12 +82,6 @@
                                 <div>Dashboard</div>
                             </a>
                         </li>
-                        <li class="menu-item {{ request()->is('admin/category/*') === true ? 'active' : '' }} waves-effect waves-light">
-                            <a href="{{ route('admin.category.list') }}" class="menu-link">
-                                <i class="menu-icon tf-icons ti ti-layout-grid"></i>
-                                <div>Categories</div>
-                            </a>
-                        </li>
                         <li class="menu-item {{ request()->is('admin/user/*') === true ? 'open active' : '' }}">
                             <a href="javascript:void(0);" class="menu-link menu-toggle">
                                 <i class="menu-icon tf-icons ti ti-users"></i>
@@ -102,6 +96,36 @@
                                 <li class="menu-item {{ request()->is('admin/user/client/*') === true ? 'active' : '' }}">
                                     <a href="{{ route('admin.user.list', 'client') }}" class="menu-link">
                                         <div>Clients</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item {{ request()->is('admin/category/*') === true ? 'active' : '' }} waves-effect waves-light">
+                            <a href="{{ route('admin.category.list') }}" class="menu-link">
+                                <i class="menu-icon tf-icons ti ti-layout-grid"></i>
+                                <div>Categories</div>
+                            </a>
+                        </li>
+                        <li class="menu-item {{ request()->is('admin/brand/*') === true ? 'active' : '' }} waves-effect waves-light">
+                            <a href="{{ route('admin.brand.list') }}" class="menu-link">
+                                <i class="menu-icon tf-icons ti ti-lifebuoy"></i>
+                                <div>Brands</div>
+                            </a>
+                        </li>
+                        <li class="menu-item {{ request()->is('admin/product/*') === true ? 'open active' : '' }}">
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <i class="menu-icon tf-icons ti ti-components"></i>
+                                <div>Products</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item {{ request()->is('admin/product/item/*') === true ? 'active' : '' }}">
+                                    <a href="{{ route('admin.item.list') }}" class="menu-link">
+                                        <div>Items</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item {{ request()->is('admin/product/stock/*') === true ? 'active' : '' }}">
+                                    <a href="{{ route('admin.stock.list') }}" class="menu-link">
+                                        <div>Stocks</div>
                                     </a>
                                 </li>
                             </ul>

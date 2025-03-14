@@ -8,8 +8,8 @@ class Stock extends Model
 {
     protected $fillable = ["item_id", "quantity", "price"];
 
-    public function product()
+    public function item()
     {
-        $this->belongsTo(Product::class);
+        return $this->belongsTo(Item::class);
     }
 }

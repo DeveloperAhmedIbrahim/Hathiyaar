@@ -77,9 +77,7 @@ Route::prefix('admin')->name('admin.')->middleware(AuthenticationCheck::class)->
     });
     Route::prefix('product/stock')->name('stock.')->group(function() {
         Route::get('list', [AdminStockCtrl::class, "list"])->name('list');
-        Route::match(['GET', 'POST'], 'insert', [AdminStockCtrl::class, "insert"])->name('insert');
         Route::match(['GET', 'POST'], 'update/{id?}', [AdminStockCtrl::class, "update"])->name('update');
-        Route::post('delete/{id}', [AdminStockCtrl::class, "delete"])->name('delete');
     });
 });
 

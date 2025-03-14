@@ -23,9 +23,14 @@
                     <span class="text-danger error-field error-name">&nbsp;</span>
                 </div>
                 <div class="form-group">
-                    <label for="name" class="form-label">Email</label>
+                    <label for="email" class="form-label">Email</label>
                     <input type="text" class="form-control" id="email" name="email" placeholder="Email Address" value="{{ old('email', $user->email) }}">
                     <span class="text-danger error-field error-email">&nbsp;</span>
+                </div>
+                <div class="form-group">
+                    <label for="contact" class="form-label">Contact</label>
+                    <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact Number" value="{{ old('contact', $user->contact) }}">
+                    <span class="text-danger error-field error-contact">&nbsp;</span>
                 </div>
                 <div class="form-group">
                     <label for="password" class="form-label">Password</label>

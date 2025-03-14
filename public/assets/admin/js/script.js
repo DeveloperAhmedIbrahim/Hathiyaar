@@ -169,6 +169,70 @@ async function deletetion(model, route, objectId) {
     });
 }
 
+async function changeStatus(model, route, objectId) {
+    Swal.fire({
+        title: "Are you sure?",
+        text: `Do you want to change the status of this ${camelToNormal(model)}?`,
+        icon: "warning",
+        showCancelButton: !0,
+        confirmButtonText: "Yes, chnage it!",
+        customClass: {
+            confirmButton: "btn btn-primary me-3 waves-effect waves-light",
+            cancelButton: "btn btn-label-secondary waves-effect waves-light",
+        },
+        showClass: { popup: "animate__animated animate__fadeIn" },
+        buttonsStyling: !1,
+      }).then(async function (t) {
+        if(t.value) {
+            loading(true);
+            try {
+                const response = await fetch(route, {
+                    headers: {
+                        "Accept": "application/json",
+                        "Content-Type": "application/json",
+                    },
+                    method: "POST",
+                    body: JSON.stringify({
+                        _token: document.querySelector("input[name='_token']").value
+                    })
+                });
+
+                const result = await response.json();
+                loading(false);
+                if(response.ok) {
+                    let statusObj = document.getElementById(objectId);
+                    statusObj.innerHTML = result.data.value;
+                    if(result.data.value === 'Active') {
+                        statusObj.classList.remove('bg-label-danger');
+                        statusObj.classList.add('bg-label-success');
+                    } else {
+                        statusObj.classList.remove('bg-label-success');
+                        statusObj.classList.add('bg-label-danger');
+                    }
+                    if(result.status) {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Updated!",
+                            text: "User status updated.",
+                            customClass: {
+                                confirmButton: "btn btn-success waves-effect waves-light",
+                            },
+                            showClass: { popup: "animate__animated animate__fadeIn" },
+                        });
+                        toastrNotification('success', result.data.message);
+                    } else {
+                        toastrNotification('success', result.data.message);
+                    }
+                } else {
+                    toastrNotification('error', result.message);
+                }
+            } catch(error) {
+                console.log(error);
+            }
+        }
+    });
+}
+
 const camelToNormal = (text) => {
     const normalText = text
         .replace(/([a-z])([A-Z])/g, '$1 $2')

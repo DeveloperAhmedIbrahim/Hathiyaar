@@ -36,6 +36,7 @@ class UserController extends Controller
             $validator = Validator::make($request->all(), [
                 'name' => 'required',
                 'email' => 'required|email|unique:users,email',
+                'contact' => 'required',
                 'password' => 'required',
                 'cofirmation' => 'required|confirmed:password',
             ]);
@@ -51,9 +52,11 @@ class UserController extends Controller
             $user = new User();
             $user->name = $request->name;
             $user->email = $request->email;
+            $user->contact = $request->contact;
             $user->password = Hash::make($request->password);
             $user->role = Role::from($role->value);
             $user->profile = '';
+            $user->status = true;
             $user->save();
 
             $role = strtolower($role->name);
@@ -88,6 +91,7 @@ class UserController extends Controller
                 $validator = Validator::make($request->all(), [
                     'name' => "required",
                     'email' => "required|email|unique:users,email,$request->id,id",
+                    'contact' => 'required',
                 ]);
 
                 if($request->password !== null)
@@ -108,6 +112,7 @@ class UserController extends Controller
 
                 $user->name = $request->name;
                 $user->email = $request->email;
+                $user->contact = $request->contact;
                 if($request->password !== null)
                 {
                     $user->password = Hash::make($request->password);
@@ -145,6 +150,34 @@ class UserController extends Controller
         return response()->json([
             'status' => true,
             'data' => [
+                'message' => 'User deleted successfully.'
+            ]
+        ]);
+    }
+
+    public function status($role, $id)
+    {
+        $role = Role::roleByName($role);
+        if($role === null)
+        {
+            return redirect()->back()->with('error', 'Invalid role selected.');
+        }
+
+        $user = User::find($id);
+        if($user->status)
+        {
+            $user->status = false;
+        }
+        else
+        {
+            $user->status = true;
+        }
+        $user->save();
+
+        return response()->json([
+            'status' => true,
+            'data' => [
+                'value' => $user->status === true ? 'Active' : 'Inactive',
                 'message' => 'User deleted successfully.'
             ]
         ]);

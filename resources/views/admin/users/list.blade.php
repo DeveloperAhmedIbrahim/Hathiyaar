@@ -17,6 +17,8 @@
           <tr>
             <th>Name</th>
             <th>Email</th>
+            <th>Contact</th>
+            <th>Status</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -26,6 +28,14 @@
                     <tr id="user-{{ $user->id }}">
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
+                        <td>{{ $user->contact }}</td>
+                        <td>
+                            @if($user->status)
+                                <div class="badge bg-label-success" id="user-status-{{ $user->id }}">Active</div>
+                            @else
+                                <div class="badge bg-label-danger" id="user-status-{{ $user->id }}">Inactive</div>
+                            @endif
+                        </td>
                         <td>
                             <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown" aria-expanded="false"><i class="ti ti-dots-vertical"></i></button>
@@ -33,6 +43,15 @@
                                     <a class="dropdown-item" href="{{ route('admin.user.update', [request('role'), $user->id]) }}">
                                         <i class="ti ti-pencil me-1"></i> Edit
                                     </a>
+                                    @if($user->status)
+                                        <a class="dropdown-item" href="javascript:void(0);" onclick="changeStatus('user', '{{ route('admin.user.status', [request('role'), $user->id]) }}', 'user-status-{{ $user->id }}')">
+                                            <i class="ti ti-ban me-1"></i> Deactivate
+                                        </a>
+                                    @else
+                                        <a class="dropdown-item" href="javascript:void(0);" onclick="changeStatus('user', '{{ route('admin.user.status', [request('role'), $user->id]) }}', 'user-status-{{ $user->id }}')">
+                                            <i class="ti ti-checkbox me-1"></i> Activate
+                                        </a>
+                                    @endif
                                     <a class="dropdown-item" href="javascript:void(0);" onclick="deletetion('user', '{{ route('admin.user.delete', [request('role'), $user->id]) }}', 'user-{{ $user->id }}')">
                                         <i class="ti ti-trash me-1"></i> Delete
                                     </a>

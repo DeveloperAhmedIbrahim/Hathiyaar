@@ -54,6 +54,7 @@ Route::prefix('admin')->name('admin.')->middleware(AuthenticationCheck::class)->
         Route::match(['GET', 'POST'], 'insert', [AdminUserCtrl::class, "insert"])->name('insert');
         Route::match(['GET', 'POST'], 'update/{id?}', [AdminUserCtrl::class, "update"])->name('update');
         Route::post('delete/{id}', [AdminUserCtrl::class, "delete"])->name('delete');
+        Route::post('status/{id}', [AdminUserCtrl::class, "status"])->name('status');
     });
     Route::prefix('category')->name('category.')->group(function() {
         Route::get('list', [AdminCategoryCtrl::class, "list"])->name('list');

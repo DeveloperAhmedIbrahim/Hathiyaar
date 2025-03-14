@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardCtrl;
 use App\Http\Controllers\Admin\AuthController as AdminAuthCtrl;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryCtrl;
+use App\Http\Controllers\Admin\UserController as AdminUserCtrl;
 // Client Controllers
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
@@ -45,6 +46,12 @@ Route::prefix('admin')->name('admin.')->middleware(AuthenticationCheck::class)->
     Route::get('profile', [AdminDashboardCtrl::class, "profile"])->name('profile');
     Route::get('dashboard', [AdminDashboardCtrl::class, "dashboard"])->name('dashboard');
     Route::get("switch-theme/{mode?}", [AdminDashboardCtrl::class, "switchTheme"])->name('switch.theme');
+    Route::prefix('user/{role}')->name('user.')->group(function() {
+        Route::get('list', [AdminUserCtrl::class, "list"])->name('list');
+        Route::match(['GET', 'POST'], 'insert', [AdminUserCtrl::class, "insert"])->name('insert');
+        Route::match(['GET', 'POST'], 'update/{id?}', [AdminUserCtrl::class, "update"])->name('update');
+        Route::post('delete/{id}', [AdminUserCtrl::class, "delete"])->name('delete');
+    });
     Route::prefix('category')->name('category.')->group(function() {
         Route::get('list', [AdminCategoryCtrl::class, "list"])->name('list');
         Route::match(['GET', 'POST'], 'insert', [AdminCategoryCtrl::class, "insert"])->name('insert');

@@ -84,44 +84,28 @@
                         </li>
                         <li class="menu-item {{ request()->is('admin/category/*') === true ? 'active' : '' }} waves-effect waves-light">
                             <a href="{{ route('admin.category.list') }}" class="menu-link">
-                                <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                                <i class="menu-icon tf-icons ti ti-layout-grid"></i>
                                 <div>Categories</div>
                             </a>
                         </li>
-                        {{-- <li class="menu-item active open">
+                        <li class="menu-item {{ request()->is('admin/user/*') === true ? 'open active' : '' }}">
                             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                <i class="menu-icon tf-icons ti ti-smart-home"></i>
-                                <div data-i18n="Dashboards">Dashboards</div>
-                                <div class="badge bg-primary rounded-pill ms-auto">5</div>
+                                <i class="menu-icon tf-icons ti ti-users"></i>
+                                <div>Users</div>
                             </a>
                             <ul class="menu-sub">
-                                <li class="menu-item active">
-                                <a href="index-2.html" class="menu-link">
-                                    <div data-i18n="Analytics">Analytics</div>
-                                </a>
+                                <li class="menu-item {{ request()->is('admin/user/vendor/*') === true ? 'active' : '' }}">
+                                    <a href="{{ route('admin.user.list', 'vendor') }}" class="menu-link">
+                                        <div>Vendors</div>
+                                    </a>
                                 </li>
-                                <li class="menu-item">
-                                <a href="dashboards-crm.html" class="menu-link">
-                                    <div data-i18n="CRM">CRM</div>
-                                </a>
-                                </li>
-                                <li class="menu-item">
-                                <a href="app-ecommerce-dashboard.html" class="menu-link">
-                                    <div data-i18n="eCommerce">eCommerce</div>
-                                </a>
-                                </li>
-                                <li class="menu-item">
-                                <a href="app-logistics-dashboard.html" class="menu-link">
-                                    <div data-i18n="Logistics">Logistics</div>
-                                </a>
-                                </li>
-                                <li class="menu-item">
-                                <a href="app-academy-dashboard.html" class="menu-link">
-                                    <div data-i18n="Academy">Academy</div>
-                                </a>
+                                <li class="menu-item {{ request()->is('admin/user/client/*') === true ? 'active' : '' }}">
+                                    <a href="{{ route('admin.user.list', 'client') }}" class="menu-link">
+                                        <div>Clients</div>
+                                    </a>
                                 </li>
                             </ul>
-                        </li> --}}
+                        </li>
                     </ul>
                 </aside>
 
